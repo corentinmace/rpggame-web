@@ -1,0 +1,65 @@
+@font-face {
+  font-family: gamer;
+  src: url("../fonts/gamer.ttf")
+}
+
+body {
+  background-image:url("../img/background/main-menu.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+main{
+  display: flex;
+}
+
+#left-part {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  padding-top: 40vh;
+  font-family: gamer;
+  color: black;
+  text-decoration: none;
+  transition: all 0.3 ease;
+}
+
+
+#menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  padding-top: 40vh;
+}
+
+a {
+  height: 100px;
+  width: 300px;
+  background-color: transparent;
+  font-size: 1.8em;
+  font-family: gamer;
+  color: black;
+  text-decoration: none;
+  transition: all 0.3 ease;
+}
+
+a:hover {
+  color: #39136f;
+  font-size: 2em;
+  transition: all 0.3s ease;
+}
+
+
+progress {
+  -webkit-appearance: none;
+}
+
+::-webkit-progress-value {
+  background-color: var(--c,green);
+}

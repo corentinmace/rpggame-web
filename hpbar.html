@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="assets/css/main.css">
+  </head>
+  <body>
+    <div id="hp">
+      <progress id="hpBar"></progress>
+      <p id="level"></p>
+      <p id="hpText"></p>
+    </div>
+    <input type="text" name="" value="" id="test">
+    <input type="button" onclick="ChangeValue()" name="" value="send">
+    <script type="text/javascript">
+        let hpBarHTML = document.getElementById("hpBar");
+        let levelHTML = document.getElementById("level");
+        let hpTextHTML = document.getElementById("hpText");
+
+        let level = "1";
+        let FullHP = "100";
+        let actualHP = "100";
+
+
+        hpBarHTML.max = FullHP;
+        hpBarHTML.value = actualHP;
+        hpTextHTML.innerHTML = `HP ${actualHP}/${FullHP}`;
+        levelHTML.innerHTML = `Lv. ${level}`;
+
+        function ChangeValue() {
+          console.log("oui");
+          actualHP = document.getElementById("test").value;
+          console.log(document.getElementById("test").value)
+
+
+          hpBarHTML.max = FullHP;
+          hpBarHTML.value = actualHP;
+          hpTextHTML.innerHTML = `HP ${actualHP}/${FullHP}`;
+          levelHTML.innerHTML = `Lv. ${level}`;
+
+          if (actualHP == FullHP * 0.5) {
+            console.log('50% HP')
+            hpBarHTML.style.setProperty("--c", "orange");
+          } else if (actualHP <= FullHP * 0.25) {
+            console.log('25% HP')
+            hpBarHTML.style.setProperty("--c", "red");
+          } else if (actualHP > FullHP * 0.50) {
+            console.log('> 50% HP')
+            hpBarHTML.style.setProperty("--c", "green");
+          }
+        }
+    </script>
+  </body>
+</html>

@@ -10,21 +10,27 @@
 
     </header>
     <main>
-      <div id="left-part">
-        <h1>Game Title</h1>
-        <h5>Created by : Corentin Mace</h5>
+      <div id="main-menu">
+        <div id="left-part">
+          <h1>Game Title</h1>
+          <h5>Created by : Corentin Mace</h5>
+        </div>
+        <div id="menu">
+          <a href="">New Game</a>
+          <a href="">Continue</a>
+          <a onclick="showSettings()">Settings</a>
+        </div>
       </div>
-      <div id="menu">
-        <a href="">New Game</a>
-        <a href="">Continue</a>
-        <a href="">Settings</a>
-      </div>
-      <div class="audio_controls">
-        <button type="button" name="button" onclick="muteVolume()">Mute</button>
-        <button type="button" name="button" onclick="playMusic()">Play</button>
+      <div id="settings">
+        <a onclick="hideSettingsMenu()">Main Menu</a>
+        <p>Volume</p>
       </div>
     </main>
     <footer>
+      <div class="audio_controls">
+        <a onclick="playMusic()"><img src="assets/img/icons/play.png" alt="" onclick="playMusic()"></a>
+        <a onclick="muteVolume()"><img src="assets/img/icons/mute.png" alt=""></a>
+      </div>
       <audio id="audio" autoplay loop>
         <source src="assets/musics/main-theme.mp3" type="audio/mpeg">
       </audio>

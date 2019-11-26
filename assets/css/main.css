@@ -3,14 +3,42 @@
   src: url("../fonts/gamer.ttf")
 }
 
+* {
+    font-family: gamer;
+}
+
 body {
   background-image:url("../img/background/main-menu.gif");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-main{
+main {
+  height: 98vh;
+}
+
+footer {
+  position: relative;
+}
+
+.audio_controls {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+
+}
+
+.audio_controls a:hover {
+  opacity: 0.5;
+}
+
+#main-menu{
   display: flex;
+}
+
+#settings {
+  display: none;
 }
 
 #left-part {
@@ -21,12 +49,10 @@ main{
   width: 50%;
   height: 100%;
   padding-top: 40vh;
-  font-family: gamer;
   color: black;
   text-decoration: none;
   transition: all 0.3 ease;
 }
-
 
 #menu {
   display: flex;
@@ -38,18 +64,17 @@ main{
   padding-top: 40vh;
 }
 
-a {
+#menu a {
   height: 100px;
   width: 300px;
   background-color: transparent;
   font-size: 1.8em;
-  font-family: gamer;
   color: black;
   text-decoration: none;
   transition: all 0.3 ease;
 }
 
-a:hover {
+#menu a:hover {
   color: #39136f;
   font-size: 2em;
   transition: all 0.3s ease;
@@ -60,6 +85,6 @@ progress {
   -webkit-appearance: none;
 }
 
-::-webkit-progress-value {
+::-webkit-progress-value, ::-moz-progress-bar {
   background-color: var(--c,green);
 }

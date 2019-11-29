@@ -10,13 +10,26 @@
 
     </header>
     <main>
+      <div id="stats_container">
+        <div id="stats_content">
+          <div class="playerInfo">
+            <p></p> <img src="" alt="">
+          </div>
+          <div class="playerInfo">
+            <progress id="hpBar"></progress><p id="hpText"></p>
+          </div>
+          <div class=playerInfo>
+            <p id="level"></p><p id="xp">0/20</p>
+          </div>
+        </div>
+      </div>
       <div id="main-menu">
         <div id="left-part">
           <h1>Game Title</h1>
           <h5>Created by : Corentin Mace</h5>
         </div>
         <div id="menu">
-          <a href="">New Game</a>
+          <a onclick="checkpoint_01()">New Game</a>
           <a href="">Continue</a>
           <a onclick="showSettings()">Settings</a>
         </div>
@@ -24,6 +37,10 @@
       <div id="settings">
         <a onclick="hideSettingsMenu()">Main Menu</a>
         <p>Volume</p>
+      </div>
+      <div id="checkpoint_01">
+
+
       </div>
     </main>
     <footer>
@@ -36,5 +53,7 @@
       </audio>
     </footer>
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/classes.js"></script>
+
   </body>
 </html>

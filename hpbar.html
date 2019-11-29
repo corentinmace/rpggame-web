@@ -6,10 +6,18 @@
     <link rel="stylesheet" href="assets/css/main.css">
   </head>
   <body>
-    <div id="hp">
-      <progress id="hpBar"></progress>
-      <p id="level"></p>
-      <p id="hpText"></p>
+    <div id="stats_container">
+      <div id="stats_content">
+        <div class="playerInfo">
+          <p></p> <img src="" alt="">
+        </div>
+        <div class="playerInfo">
+          <progress id="hpBar"></progress><p id="hpText"></p>
+        </div>
+        <div class=playerInfo>
+          <p id="level"></p><p id="xp">0/20</p>
+        </div>
+      </div>
     </div>
     <input type="text" name="" value="" id="test">
     <input type="button" onclick="ChangeValue()" name="" value="send">
@@ -17,6 +25,10 @@
         let hpBarHTML = document.getElementById("hpBar");
         let levelHTML = document.getElementById("level");
         let hpTextHTML = document.getElementById("hpText");
+        let persoStats = document.getElementById("stats_container");
+
+        persoStats.style.display = 'flex';
+        persoStats.style.color = 'black';
 
         let level = "1";
         let FullHP = "100";
@@ -25,7 +37,7 @@
 
         hpBarHTML.max = FullHP;
         hpBarHTML.value = actualHP;
-        hpTextHTML.innerHTML = `HP ${actualHP}/${FullHP}`;
+        hpTextHTML.innerHTML = `${actualHP}/${FullHP}`;
         levelHTML.innerHTML = `Lv. ${level}`;
 
         function ChangeValue() {
@@ -36,13 +48,13 @@
           hpTextHTML.innerHTML = `HP ${actualHP}/${FullHP}`;
           levelHTML.innerHTML = `Lv. ${level}`;
 
-          if (actualHP == FullHP * 0.5) {
+          if (actualHP < defaultHP * 0.5) {
             console.log('50% HP')
             hpBarHTML.style.setProperty("--c", "orange");
-          } else if (actualHP <= FullHP * 0.25) {
+          } else if (actualHP <= defaultHP * 0.25) {
             console.log('25% HP')
             hpBarHTML.style.setProperty("--c", "red");
-          } else if (actualHP > FullHP * 0.50) {
+          } else if (actualHP > defaultHP * 0.50) {
             console.log('> 50% HP')
             hpBarHTML.style.setProperty("--c", "green");
           }

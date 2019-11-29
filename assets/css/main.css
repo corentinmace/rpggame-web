@@ -33,6 +33,29 @@ footer {
   opacity: 0.5;
 }
 
+/* Stats */
+#stats_container {
+  display: none;
+  justify-content: end;
+}
+
+#stats_content {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid black;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+}
+
+.playerInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 220px;
+}
+
 #main-menu{
   display: flex;
 }
@@ -83,8 +106,17 @@ footer {
 
 progress {
   -webkit-appearance: none;
+  height: 10px;
 }
 
 ::-webkit-progress-value, ::-moz-progress-bar {
   background-color: var(--c,green);
+}
+
+
+
+/* Checlpoint Divs */
+
+#checkpoint_01 {
+  display: none;
 }

@@ -16,6 +16,8 @@ let nvEpee = 0;
 let damage = 0;
 let monstre11_hp = 15;
 let soldat17_hp = 25;
+let cleHangar = 0;
+
 
 let hpBarHTML = document.getElementById("hpBar");
 let levelHTML = document.getElementById("level");
@@ -177,6 +179,11 @@ let checkpoint_15Div = document.getElementById("checkpoint_15");
 let checkpoint_16Div = document.getElementById("checkpoint_16");
 let checkpoint_17Div = document.getElementById("checkpoint_17");
 let checkpoint_18Div = document.getElementById("checkpoint_18");
+let checkpoint_19Div = document.getElementById("checkpoint_19");
+let checkpoint_20Div = document.getElementById("checkpoint_20");
+let checkpoint_21Div = document.getElementById("checkpoint_21");
+let checkpoint_22Div = document.getElementById("checkpoint_22");
+let checkpoint_23Div = document.getElementById("checkpoint_23");
 
 // Text div
 
@@ -184,6 +191,7 @@ let text_01_00Div = document.getElementById("text_01_00");
 let text_01_01Div = document.getElementById("text_01_01");
 let text_08_00Div = document.getElementById("text_08_00");
 let text_15_00Div = document.getElementById("text_15_00");
+let text_20_00Div = document.getElementById("text_20_00");
 
 // Button
 
@@ -411,7 +419,44 @@ function checkpoint_18() {
   checkpoint_17Div.style.display = "none";
   checkpoint_18Div.style.display = "block";
   audio.src = 'assets/musics/music-1.mp3';
+  cleHangar = 1;
 }
+
+function checkpoint_19() {
+  checkpointCounter = 19;
+  checkpoint_16Div.style.display = "none";
+  checkpoint_18Div.style.display = "none";
+  checkpoint_19Div.style.display = "block";
+}
+
+function checkpoint_20() {
+  checkpointCounter = 20;
+  checkpoint_19Div.style.display = "none";
+  checkpoint_20Div.style.display = "block";
+}
+
+function checkpoint_21() {
+  checkpointCounter = 21;
+  checkpoint_20Div.style.display = "none";
+  checkpoint_21Div.style.display = "block";
+}
+
+function checkpoint_22() {
+  checkpointCounter = 22;
+  checkpoint_19Div.style.display = "none";
+  checkpoint_21Div.style.display = "none";
+  checkpoint_22Div.style.display = "block";
+}
+
+function checkpoint_23() {
+  checkpointCounter = 23;
+  checkpoint_22Div.style.display = "none";
+  checkpoint_23Div.style.display = "block";
+  document.body.style.backgroundImage = "url('assets/img/background/background-1.png')";
+  audio.src = 'assets/musics/jail-sounds.mp3';
+}
+
+
 
 
 
@@ -507,5 +552,14 @@ function choix_17_00() {
     ChangeValue();
     console.log("monstre tué")
     checkpoint_18();
+  }
+}
+
+function choix_20_00() {
+  if (cleHangar === 1) {
+    text_20_00.innerHTML = "Vous entrez dans le hangar grace a la cle du soldat";
+    setTimeout(checkpoint_21, 2000);
+  } else if (cleHangar === 0){
+    text_20_00.innerHTML = "Vous ne pouvez pas entrer dans le hangar"
   }
 }

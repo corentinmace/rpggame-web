@@ -123,12 +123,11 @@
           <button type="button" name="button" class="buttonChoices" onclick="checkpoint_16()">Partir de l'avant-poste</button>
         </div>
         <div id="checkpoint_16">
-          <p class="text_case">Vous partez de l'avant poste et contiuez votre route, et vous voyez au loin deux personnes armées</p>
+          <p class="text_case">Vous partez de l'avant poste et contiuez votre route, et vous voyez au loin deux personnes armees</p>
           <button type="button" name="button" class="buttonChoices" onclick="checkpoint_19()">Contourner ce chemin</button>
           <button type="button" name="button" class="buttonChoices" onclick="checkpoint_17()">S'approcher discretement et tenter de les tuer</button>
 
         </div>
-
         <div id="checkpoint_17">
           <p id="gameOver" class="text_case">Game Over</p>
 
@@ -147,7 +146,34 @@
 
         </div>
         <div id="checkpoint_18">
+          <p class="text_case">Vous avez reussi à tuer le soldat, et vous voyez une cle a ses pieds, vous la ramasser sans savoir ce qu'elle pourra ouvrir</p>
+          <button type="button" name="button" class="buttonChoices" onclick="checkpoint_19()">Continer de marcher</button>
 
+        </div>
+        <div id="checkpoint_19">
+          <p class="text_case">Devant vous 2 chemins se forment, a votre gauche un hangar, et a votre droite, vous voyez au loin un batiment, ou souhaitez vous aller</p>
+          <button type="button" name="button" class="buttonChoices" onclick="checkpoint_20()">Aller vers le hangar</button>
+          <button type="button" name="button" class="buttonChoices" onclick="checkpoint_22()">Aller vers le batiment</button>
+        </div>
+        <div id="checkpoint_20">
+            <p id="text_20_00" class="text_case">Vous arrivez devant la porte du hangar, un cadenat la ferme</p>
+            <button type="button" name="button" class="buttonChoices" onclick="checkpoint_21()">Tenter de rentrer dans le hangar</button>
+            <button type="button" name="button" class="buttonChoices" onclick="checkpoint_22()">Aller vers le batiment</button>
+        </div>
+        <div id="checkpoint_21">
+          <p class="text_case">Vous ouvrez le hangar, et vous rendez compte qu'il est vide</p>
+          <button type="button" name="button" class="buttonChoices" onclick="checkpoint_22()">Sortir du hangar et aller vers le batiment</button>
+        </div>
+
+        <div id="checkpoint_22">
+          <p class="text_case">Vous vous rendez compte que ce batiment est une base enemie, vous decidez donc de rentrer, et a ce moment, vous prenez un gros coup sur la tete et vous vous evanouissez...</p>
+          <button type="button" name="button" class="buttonChoices" onclick="checkpoint_23()">Contiuer...</button>
+
+        </div>
+
+        <div id="checkpoint_23">
+          <p class="text_case">Jour 3...</p>
+          <p class="text_case">La suite dans la prochain DLC a seulement 5e99</p>
         </div>
 
       </div>

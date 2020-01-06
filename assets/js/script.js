@@ -332,7 +332,7 @@ function checkpoint_08() {
   checkpoint_07Div.style.display = "none";
   checkpoint_08Div.style.display = "block";
 
-  if (nvEpee === 1) {
+  if (nvEpee === 0) {
     text_08_00Div.innerHTML = `Vous partez de la base avec ${steak} steak rendant 4hp chacun et une epee rouillee`;
   } else {
     text_08_00Div.innerHTML = `Vous partez de la base avec ${steak} steak rendant 4hp chacun et une epee de niveau 1`;
@@ -556,10 +556,10 @@ function choix_17_00() {
 }
 
 function choix_20_00() {
-  if (cleHangar === 1) {
+  if (cleHangar === 0) {
+    text_20_00.innerHTML = "Vous ne pouvez pas entrer dans le hangar"
+  } else if (cleHangar === 1){
     text_20_00.innerHTML = "Vous entrez dans le hangar grace a la cle du soldat";
     setTimeout(checkpoint_21, 2000);
-  } else if (cleHangar === 0){
-    text_20_00.innerHTML = "Vous ne pouvez pas entrer dans le hangar"
   }
 }

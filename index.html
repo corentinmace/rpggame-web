@@ -13,23 +13,24 @@
       <div id="stats_container">
         <div id="stats_content">
           <div class="playerInfo">
-            <p></p> <img src="" alt="">
+            <p id="playerNameP"></p> <img id="playerSexImg" src="" alt="">
           </div>
           <div class="playerInfo">
             <progress id="hpBar"></progress><p id="hpText"></p>
           </div>
           <div class=playerInfo>
-            <p id="level"></p><p id="xp">0/20</p>
+            <p id="level"></p><p id="xp"></p>
+            <p id="playerGold"></p>
           </div>
         </div>
       </div>
       <div id="main-menu">
         <div id="left-part">
-          <h1>Game Title</h1>
+          <h1>Last Day</h1>
           <h5>Created by : Corentin Mace</h5>
         </div>
         <div id="menu">
-          <a onclick="checkpoint_01()">New Game</a>
+          <a onclick="checkpoint_00()">New Game</a>
           <a href="">Continue</a>
           <a onclick="showSettings()">Settings</a>
         </div>
@@ -38,10 +39,119 @@
         <a onclick="hideSettingsMenu()">Main Menu</a>
         <p>Volume</p>
       </div>
-      <div id="checkpoint_01">
+      <div id="mainStory">
+        <div id="checkpoint_00">
+          <p id="text_00_01" class="text_case">Vous etes un survivant d'une apocalypse dattant de quelques mois seulement.
+          Plus aucune technologie de pointe ne fonctionne, il vous faudra donc trouver des armes blanches pour vous defendre des nombreux enemies que vous pourrez croiser.</p>
+          <button type="button" name="button" class="buttonChoices" onclick="checkpoint_01()">Suivant</button>
+        </div>
+        <div id="checkpoint_01">
+          <p id="text_01_00" class="text_case">Personne ne repond.</p>
+          <p id="text_01_01" class="text_case">C'est une prison.</p>
+          <div id="choices">
+            <button type="button" name="button" class="buttonChoices" onclick="choix_01_00()">Crier au secours</button>
+            <button type="button" name="button" class="buttonChoices" onclick="choix_01_01()">Examier la piece</button>
+            <button id="hiddenButton" type="button" name="button" class="buttonChoices" onclick="checkpoint_02()">Suivant</button>
+          </div>
+        </div>
+        <div id="checkpoint_02">
+          <p id="text_02_00" class="text_case">3 jours avant..</p>
+        </div>
+        <div id="checkpoint_03">
+          <p id="text_03_00">Entrez votre nom :</p>
+          <input type="text" id="nameInput" value="">
+          <p id="text_03_00">Choisissez votre sexe :</p>
+          <img src="assets/img/icons/male.png" onclick="playerSex='m'"  alt="" value="m">
+          <img src="assets/img/icons/female.png" onclick="playerSex='f'" alt="" value="f">
+          <button type="button" name="button" class="buttonChoices" onclick="setPlayerInfos()">Valider</button>
+        </div>
+        <div id="checkpoint_04">
+          <p id="text_04_00" class="text_case">Vous sortez de votre chambre et vous devez effectuer une mission : Le chef est gravement malade et vous devez aller chercher des medicaments en dehors du territoire allie</p>
+          <button type="button" name="button" class="buttonChoices" onclick="choix_04_00()">Vous partez directement</button>
+          <button type="button" name="button" class="buttonChoices" onclick="choix_04_01()">Vous visitez la base</button>
+        </div>
+        <div id="checkpoint_06">
+          <p class="text_case">Quelqu'un veut vous vendre une epee pour 100G.</p>
+          <button type="button" name="button" class="buttonChoices" onclick="choix_06_00()">Acheter</button>
+          <button type="button" name="button" class="buttonChoices" onclick="checkpoint_07()">Ne pas acheter</button>
+        </div>
+        <div id="checkpoint_07">
+          <p class="text_case">On vous propose des vivres (3 steaks) pour 20G</p>
+          <button type="button" name="button" class="buttonChoices" onclick="choix_07_00()">Acheter</button>
+          <button type="button" name="button" class="buttonChoices" onclick="checkpoint_08()">Ne pas acheter</button>
+        </div>
+        <div id="checkpoint_08">
+          <p class="text_case" id="text_08_00"></p>
+          <button type="button" name="button" class="buttonChoices" onclick="checkpoint_09()">Suivant</button>
+        </div>
+        <div id="checkpoint_09">
+          <p class="text_case">Vous sortez de la base, et vous vous mettez en route</p>
+          <button type="button" name="button" class="buttonChoices" onclick="checkpoint_10()">Partir vers le nord</button>
+          <button type="button" name="button" class="buttonChoices" onclick="checkpoint_11()">Partir vers l'est</button>
 
+        </div>
+        <div id="checkpoint_10">
+          <p class="text_case">Game Over</p>
+          <p class="text_case">Vous tombez dans une faille et vous mourrez</p>
+        </div>
+        <div id="checkpoint_11">
+          <p class="text_case">Vous tombez nez a nez avec un monstre !</p>
+          <div class="monstre">
+            <p>Monstre</p>
+            <p id="hpMonstre">HP : 15/15</p>
+          </div>
+          <button type="button" name="button" class="buttonChoices" onclick="choix_11_00()">Mettre un coup d'epee</button>
+          <p id="gameOver" class="text_case">Game Over</p>
+        </div>
+        <div id="checkpoint_12">
+          <p class="text_case">Vous avez reussi a battre le monstre, voulez vous manger un steak ?</p>
+
+          <button type="button" name="button" class="buttonChoices" onclick="choix_12_00()">Manger un steak</button>
+          <button type="button" name="button" class="buttonChoices" onclick="choix_12_01()">Continuer notre route</button>
+        </div>
+        <div id="checkpoint_13">
+          <p class="text_case">Vous trouvez un avant poste à l'abandon et vous decidez de rentrer dedans pour vous mettre a l'abris</p>
+          <button type="button" name="button" class="buttonChoices" onclick="checkpoint_14()">Visiter l'avant-poste</button>
+          <button type="button" name="button" class="buttonChoices" onclick="checkpoint_15()">Se reposer</button>
+        </div>
+        <div id="checkpoint_14">
+          <p class="text_case">Vous avez passe 1h a visiter l'avant poste et avez trouve une epee qui avait l'air un peu plus solide que la votre, vous sentez maintenant le besoin de vous reposer</p>
+          <button type="button" name="button" class="buttonChoices" onclick="checkpoint_15()">Se reposer</button>
+        </div>
+        <div id="checkpoint_15">
+          <p class="text_case" id="text_15_00">Jour 2</p>
+          <button type="button" name="button" class="buttonChoices" onclick="checkpoint_16()">Partir de l'avant-poste</button>
+        </div>
+        <div id="checkpoint_16">
+          <p class="text_case">Vous partez de l'avant poste et contiuez votre route, et vous voyez au loin deux personnes armées</p>
+          <button type="button" name="button" class="buttonChoices" onclick="checkpoint_19()">Contourner ce chemin</button>
+          <button type="button" name="button" class="buttonChoices" onclick="checkpoint_17()">S'approcher discretement et tenter de les tuer</button>
+
+        </div>
+
+        <div id="checkpoint_17">
+          <p id="gameOver" class="text_case">Game Over</p>
+
+          <p class="text_case">Vous arrivez derriere les deux soldats, et vous arrivez à enfoncer votre epee dans la poitrine d'un des deux, il meurt sur le coup, mais l'autre soldat se retourne instantanement vers vous</p>
+          <div class="flex_container">
+            <div class="monstre">
+              <p>Soldat 1 (mort)</p>
+              <p>HP : 0/25</p>
+            </div>
+            <div class="monstre">
+              <p>Soldat 2</p>
+              <p id="hpSoldat17">HP : 25/25</p>
+            </div>
+          </div>
+          <button type="button" name="button" class="buttonChoices" onclick="choix_17_00()">Mettre un coup d'epee</button>
+
+        </div>
+        <div id="checkpoint_18">
+
+        </div>
 
       </div>
+
     </main>
     <footer>
       <div class="audio_controls">

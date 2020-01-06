@@ -5,6 +5,7 @@
 
 * {
     font-family: gamer;
+    overflow: hidden;
 }
 
 body {
@@ -13,9 +14,6 @@ body {
   background-size: cover;
 }
 
-main {
-  height: 98vh;
-}
 
 footer {
   position: relative;
@@ -42,10 +40,16 @@ footer {
 #stats_content {
   display: flex;
   flex-direction: column;
-  border: 3px solid black;
+  border: 3px solid white;
   padding: 10px;
   border-radius: 10px;
   color: white;
+  background-color: black;
+  opacity: 0.5;
+}
+
+#stats_content:hover {
+    opacity: 1;
 }
 
 .playerInfo {
@@ -53,7 +57,11 @@ footer {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  width: 220px;
+  width: 240px;
+}
+
+.playerInfo img {
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
 }
 
 #main-menu{
@@ -113,10 +121,97 @@ progress {
   background-color: var(--c,green);
 }
 
+#mainStory {
 
-
-/* Checlpoint Divs */
-
-#checkpoint_01 {
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
   display: none;
+}
+
+.text_case {
+  width: 80%;
+  margin: auto;
+  font-size: 1.8em;
+  letter-spacing: 2px;
+  text-align: center;
+  border: 6px solid black;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: #FFF;
+}
+
+.buttonChoices {
+  font-size: 1.3em;
+  border: 2px solid black;
+  background-color: #FFF;
+  color: black;
+  text-align: center;
+  margin-top: 10px;
+}
+.buttonChoices:hover {
+  font-size: 1.3em;
+  border: 2px solid #FFF;
+  background-color: black;
+  color: white;
+  text-align: center;
+  margin-top: 10px;
+}
+
+#choices {
+  display: flex;
+  width: 80%;
+  margin: auto;
+  justify-content: space-around;
+}
+
+#hiddenButton {
+  display: none;
+}
+
+/* Text Div */
+
+#text_01_00, #text_01_01 {
+  display: none;
+}
+
+
+/* Checkpoint Divs */
+
+#checkpoint_00 {
+  display: none;
+  text-align: center;
+}
+
+#checkpoint_01, #checkpoint_02, #checkpoint_03, #checkpoint_04, #checkpoint_05, #checkpoint_06, #checkpoint_07, #checkpoint_08, #checkpoint_09, #checkpoint_10, #checkpoint_11, #checkpoint_12, #checkpoint_13, #checkpoint_14, #checkpoint_15, #checkpoint_16, #checkpoint_17 {
+  display: none;
+  width: 100vw;
+  text-align: center;
+}
+
+#gameOver {
+  display: none;
+}
+
+#checkpoint_03 img {
+  height: 50px;
+}
+
+#checkpoint_03 img:hover {
+  opacity: 0.5;
+}
+
+.monstre p {
+  color: white;
+}
+
+.monstre {
+  border: 2px solid white;
+  width: 150px;
+  margin: auto;
+}
+
+.flex_container {
+  display: flex;
+  justify-content: space-between;
 }
